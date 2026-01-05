@@ -1,0 +1,17 @@
+<!-- views/home.hbs -->
+
+{{!-- Include header partial --}}
+{{> header}}
+
+<h1>Home</h1>
+<p>{{homeStartingContent}}</p>
+
+{{#each posts}}
+  <div class="post">
+    <h1>{{title}}</h1>
+    <p>{{content}}...<a href="/post/{{_id}}">Read More</a></p>
+  </div>
+{{/each}}
+
+{{!-- Include footer partial --}}
+{{> footer}}

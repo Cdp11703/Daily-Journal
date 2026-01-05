@@ -1,0 +1,22 @@
+<!-- views/post.hbs -->
+
+{{!-- Include header partial --}}
+{{>header}}
+
+{{#if post}}
+  {{#each post}}
+    <h1>{{title}}</h1>
+    <p>{{content}}</p>
+    <div class="time">
+      <p>Created at: {{createdAt}}</p>
+      <p>Updated at: {{updatedAt}}</p>
+    </div>
+    <a href="/edit/{{_id}}" class="btn btn-sm btn-primary">Edit</a>
+    <a href="/delete/{{_id}}" class="btn btn-sm btn-danger">Delete</a>
+  {{/each}}
+{{else}}
+  <p>No posts found.</p>
+{{/if}}
+
+{{!-- Include footer partial --}}
+{{>footer}}
